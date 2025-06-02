@@ -59,24 +59,6 @@
       padding: 40px 60px 20px;
     }
 
-    .gem-section {
-      background-color: #222;
-      padding: 30px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 900px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .gem-section iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    /* 3-column layout */
     .article-container {
       display: grid;
       grid-template-columns: 1fr 2fr 1fr;
@@ -93,15 +75,31 @@
       font-size: 14px;
     }
 
+    .gem-section {
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .gem-section iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
     article {
       background-color: #222;
       padding: 30px;
       border-radius: 10px;
       font-size: 16px;
       line-height: 1.6;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 40px;
     }
 
-    /* Ad Section */
     .ad-section {
       background-color: #111;
       padding: 30px 60px;
@@ -136,7 +134,8 @@
       }
 
       article,
-      .sidebar {
+      .sidebar,
+      .gem-section {
         padding: 20px;
       }
     }
@@ -155,11 +154,7 @@
   </header>
 
   <main>
-    <div class="gem-section">
-      <h2>Ask About Global Politics</h2>
-      <iframe src="https://gemini.google.com/embed/gem-id-placeholder"></iframe>
-    </div>
-
+    <!-- Gemini embed with sidebars -->
     <div class="article-container">
       <!-- Left Sidebar -->
       <div class="sidebar">
@@ -172,17 +167,11 @@
         </ul>
       </div>
 
-      <!-- Main Article -->
-      <article>
-        <h3>Latest Geopolitical Insights</h3>
-        <p><strong>May 2025:</strong> The shifting dynamics in the South China Sea have reignited debates around international maritime law. China's increasing naval activity and recent military drills have prompted diplomatic protests from neighboring countries including the Philippines and Vietnam.</p>
-
-        <p>Meanwhile, the U.S. has reaffirmed its commitment to freedom of navigation operations in the region, raising tensions further. Analysts suggest that these developments could lead to a regional arms race if not carefully managed.</p>
-
-        <p>In Europe, NATO continues to expand its eastern posture in response to renewed Russian aggression in Eastern Ukraine. The alliance is now focusing on cyber defense and energy security as critical domains of deterrence. With elections approaching in several European nations, public opinion on foreign policy is becoming increasingly divided.</p>
-
-        <p>Experts recommend watching economic indicators and trade alignments closely, particularly in Africa and Latin America, where global powers are competing for strategic influence through infrastructure investments and security partnerships.</p>
-      </article>
+      <!-- Center: Gemini -->
+      <div class="gem-section">
+        <h2>Ask About Global Politics</h2>
+        <iframe src="https://gemini.google.com/embed/gem-id-placeholder"></iframe>
+      </div>
 
       <!-- Right Sidebar -->
       <div class="sidebar">
@@ -195,6 +184,18 @@
         </ul>
       </div>
     </div>
+
+    <!-- Main Article -->
+    <article>
+      <h3>Latest Geopolitical Insights</h3>
+      <p><strong>May 2025:</strong> The shifting dynamics in the South China Sea have reignited debates around international maritime law. China's increasing naval activity and recent military drills have prompted diplomatic protests from neighboring countries including the Philippines and Vietnam.</p>
+
+      <p>Meanwhile, the U.S. has reaffirmed its commitment to freedom of navigation operations in the region, raising tensions further. Analysts suggest that these developments could lead to a regional arms race if not carefully managed.</p>
+
+      <p>In Europe, NATO continues to expand its eastern posture in response to renewed Russian aggression in Eastern Ukraine. The alliance is now focusing on cyber defense and energy security as critical domains of deterrence. With elections approaching in several European nations, public opinion on foreign policy is becoming increasingly divided.</p>
+
+      <p>Experts recommend watching economic indicators and trade alignments closely, particularly in Africa and Latin America, where global powers are competing for strategic influence through infrastructure investments and security partnerships.</p>
+    </article>
   </main>
 
   <div class="ad-section">
