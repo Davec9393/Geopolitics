@@ -12,7 +12,6 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Top Banner */
     header {
       background-color: #444;
       display: flex;
@@ -53,24 +52,21 @@
       cursor: pointer;
     }
 
-    /* Main Content */
     main {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px 60px 20px;
-      text-align: center;
     }
 
-    .gem-section,
-    article {
+    .gem-section {
       background-color: #222;
       padding: 30px;
       border-radius: 10px;
       width: 100%;
       max-width: 900px;
       margin-bottom: 40px;
-      text-align: left;
+      text-align: center;
     }
 
     .gem-section iframe {
@@ -78,6 +74,31 @@
       height: 400px;
       border: none;
       border-radius: 8px;
+    }
+
+    /* 3-column layout */
+    .article-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+    }
+
+    .sidebar {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    article {
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     /* Ad Section */
@@ -99,22 +120,23 @@
       font-size: 16px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .article-container {
+        grid-template-columns: 1fr;
+      }
+
       .ad-placeholder {
         width: 100%;
         max-width: 100%;
-        height: 90px;
-        line-height: 90px;
-        font-size: 14px;
-      }
-
-      .gem-section,
-      article {
-        padding: 20px;
       }
 
       main,
       .ad-section {
+        padding: 20px;
+      }
+
+      article,
+      .sidebar {
         padding: 20px;
       }
     }
@@ -138,23 +160,46 @@
       <iframe src="https://gemini.google.com/embed/gem-id-placeholder"></iframe>
     </div>
 
-    <article>
-      <h3>Latest Geopolitical Insights</h3>
-      <p><strong>May 2025:</strong> The shifting dynamics in the South China Sea have reignited debates around international maritime law. China's increasing naval activity and recent military drills have prompted diplomatic protests from neighboring countries including the Philippines and Vietnam.</p>
+    <div class="article-container">
+      <!-- Left Sidebar -->
+      <div class="sidebar">
+        <h4>Related Topics</h4>
+        <ul>
+          <li>South China Sea</li>
+          <li>Cybersecurity</li>
+          <li>NATO Expansion</li>
+          <li>Trade Agreements</li>
+        </ul>
+      </div>
 
-      <p>Meanwhile, the U.S. has reaffirmed its commitment to freedom of navigation operations in the region, raising tensions further. Analysts suggest that these developments could lead to a regional arms race if not carefully managed.</p>
+      <!-- Main Article -->
+      <article>
+        <h3>Latest Geopolitical Insights</h3>
+        <p><strong>May 2025:</strong> The shifting dynamics in the South China Sea have reignited debates around international maritime law. China's increasing naval activity and recent military drills have prompted diplomatic protests from neighboring countries including the Philippines and Vietnam.</p>
 
-      <p>In Europe, NATO continues to expand its eastern posture in response to renewed Russian aggression in Eastern Ukraine. The alliance is now focusing on cyber defense and energy security as critical domains of deterrence. With elections approaching in several European nations, public opinion on foreign policy is becoming increasingly divided.</p>
+        <p>Meanwhile, the U.S. has reaffirmed its commitment to freedom of navigation operations in the region, raising tensions further. Analysts suggest that these developments could lead to a regional arms race if not carefully managed.</p>
 
-      <p>Experts recommend watching economic indicators and trade alignments closely, particularly in Africa and Latin America, where global powers are competing for strategic influence through infrastructure investments and security partnerships.</p>
-    </article>
+        <p>In Europe, NATO continues to expand its eastern posture in response to renewed Russian aggression in Eastern Ukraine. The alliance is now focusing on cyber defense and energy security as critical domains of deterrence. With elections approaching in several European nations, public opinion on foreign policy is becoming increasingly divided.</p>
+
+        <p>Experts recommend watching economic indicators and trade alignments closely, particularly in Africa and Latin America, where global powers are competing for strategic influence through infrastructure investments and security partnerships.</p>
+      </article>
+
+      <!-- Right Sidebar -->
+      <div class="sidebar">
+        <h4>Editor's Picks</h4>
+        <ul>
+          <li>BRICS Expansion Explained</li>
+          <li>Top 5 Conflicts to Watch</li>
+          <li>China-Africa Relations</li>
+          <li>Post-Brexit Trade Routes</li>
+        </ul>
+      </div>
+    </div>
   </main>
 
   <div class="ad-section">
-    <!-- Replace with actual Google Ads code -->
     <div class="ad-placeholder">Ad Space (728×90)</div>
   </div>
 
 </body>
 </html>
-
