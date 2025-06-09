@@ -3,73 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subscribe</title>
+  <title>Geopolitical Articles</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      background-color: #1a237e;
+      color: white;
+      padding: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .login-btn, .subscribe-btn {
+      background-color: white;
+      color: #1a237e;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .login-btn:hover,
+    .subscribe-btn:hover {
+      background-color: #e8eaf6;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .article {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .article h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .article p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .adsense {
+      background: #eee;
+      height: 90px;
+      width: 728px;
+      margin: 40px auto;
+      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      border: 1px dashed #aaa;
+      border-radius: 6px;
     }
 
-    .subscribe-box {
-      background-color: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 400px;
-      width: 100%;
-    }
-
-    .subscribe-box h2 {
-      margin-bottom: 1rem;
-      color: #333333;
-    }
-
-    .subscribe-box p {
-      margin-bottom: 2rem;
-      font-size: 1rem;
-      color: #555555;
-    }
-
-    .subscribe-box input {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    .subscribe-box button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-
-    .subscribe-box button:hover {
-      background-color: #218838;
+    @media (max-width: 768px) {
+      .adsense {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="subscribe-box">
-    <h2>Subscribe</h2>
-    <p>Enter your bank details — it's safe with Dave</p>
-    <form action="paid.index" method="GET">
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Continue</button>
-    </form>
-  </div>
+
+  <header>
+    <div class="logo">🌍 Geopolitical</div>
+    <div class="header-buttons">
+      <a href="subscribe.html" class="subscribe-btn">Subscribe</a>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid" id="articles"></div>
+
+    <!-- Google AdSense Placeholder -->
+    <div class="adsense">
+      <!-- Replace with your real Google AdSense script -->
+      <strong>AdSense 728×90 Banner Ad</strong><br>
+      (Your ad will appear here)
+    </div>
+  </main>
+
+  <script>
+    const topics = [
+      "Ukraine Conflict Analysis",
+      "China–Taiwan Relations",
+      "Middle East Tensions",
+      "US–Russia Diplomatic Shifts",
+      "Global Oil Market Power Plays"
+    ];
+
+    function generateArticle(topic) {
+      return `
+        <div class="article">
+          <h2>${topic}</h2>
+          <p>
+            This is a placeholder article about <strong>${topic}</strong>. 
+            In the full version, this content would be generated using your AI-powered generator. 
+            It can cover current events, analysis, and historical context related to geopolitical dynamics.
+          </p>
+        </div>
+      `;
+    }
+
+    const container = document.getElementById("articles");
+    container.innerHTML = topics.map(generateArticle).join('');
+  </script>
+
 </body>
 </html>
